@@ -4,15 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-<<<<<<< HEAD
+  has_many :read_counts, dependent: :destroy # 閲覧数
   has_many :user_rooms
   has_many :chats
   has_many :rooms, through: :user_rooms
   # DM機能のため追加
-=======
-  has_many :read_counts, dependent: :destroy # 閲覧数
->>>>>>> 9a
-
+  
   has_many :books
   has_many :book_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
