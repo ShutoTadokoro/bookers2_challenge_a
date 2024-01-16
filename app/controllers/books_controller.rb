@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.order(star: :desc) # いいね数から昇順でソート
     @book = Book.new
   end
 
