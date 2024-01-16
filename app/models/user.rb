@@ -3,6 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
+  # DM機能のため追加
 
   has_many :books
   has_many :book_comments, dependent: :destroy
