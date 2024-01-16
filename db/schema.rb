@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2024_01_16_063633) do
+=======
+ActiveRecord::Schema.define(version: 2024_01_16_070943) do
+>>>>>>> 9a
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,12 +65,22 @@ ActiveRecord::Schema.define(version: 2024_01_16_063633) do
     t.integer "user_id"
     t.integer "room_id"
     t.text "message"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "read_counts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "book_id"
     t.datetime "created_at", precision: 6, null: false
